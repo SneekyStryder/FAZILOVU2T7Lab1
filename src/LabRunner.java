@@ -1,49 +1,45 @@
+import java.util.Scanner;
+
 public class LabRunner {
     public static void main(String[] args) {
-        String str = new String("good morning");
-        int strLen = str.length();
-        System.out.println(strLen);
+        Scanner scan = new Scanner(System.in);
 
-        String str1 = "Hello how are you today?";
-        System.out.println(str1.indexOf("you"));
-        System.out.println(str1.indexOf("You"));
+        System.out.print("Enter first string: ");
+        String string1 = scan.nextLine();
+        System.out.println("String length: " + string1.length());
+        System.out.println("First half: " + string1.substring(0,(string1.length() / 2)) + "\n" + "Second half: " + string1.substring(string1.length() / 2));
+        System.out.print("Enter second string: ");
+        String string2 = scan.nextLine();
 
-        String myString = "AP CSA is awesome!";
-        String aweStr = myString.substring(10, 13);
-        System.out.println(aweStr);
-        String s = myString.substring(4, 5);
-        System.out.println(s);
-        String awe = myString.substring(10);
-        System.out.println(awe);
+        if (string1.length() > string2.length()) {
+            System.out.println(string1 + " is longer");
+        }
+        else if (string1.length() == string2.length()) {
+            System.out.println("Both strings have the same length");
+        }
+        else {
+            System.out.println(string2 + " is longer");
+        }
 
-        String origStr = "Hello how are you today?";
-        String str9 = origStr.substring(6, 9);
-        System.out.println(str9);
 
-        String blah = "What's for dinner?";
-        String ugh = blah.substring(11, 17);
-        System.out.println(ugh);
+        if (string1.compareTo(string2) > 0) {
+            System.out.println(string2 + " is first alphabetically");
+        }
+        else if (string1.equals(string2)) {
+            System.out.println("Both strings have the exact same characters");
+        }
+        else {
+            System.out.println(string1 + " is first alphabetically");
+        }
 
-        String today = "FRIDAY!";
-        String x = today.substring(3, 7).substring(0, 3).substring(1, 3);
-        System.out.println(x);
 
-        String blah2 = "What's for dinner?";
-        String ugh2 = blah2.substring(11);
-        System.out.println(ugh2);
-        String ugh3 = blah2.substring(11, 18);
-        System.out.println(ugh3);
+        if (string1.indexOf(string2) >= 0) {
+            System.out.println(string2 + " is found in " + string1 + " at index " + string1.indexOf(string2));
+        }
+        else {
+            System.out.println(string2 + " is NOT found in " + string1);
+        }
 
-        String random = "Hello there!";
-        String there = random.substring(6);
-        System.out.println(there);
-        String there1 = random.substring(6, 12);
-        System.out.println(there1);
-
-        String work = "Hello there!";
-        String sucks = new String("Hello there!");
-        System.out.println(work.equals(sucks));
-        System.out.println(work == sucks);
 
     }
 }
